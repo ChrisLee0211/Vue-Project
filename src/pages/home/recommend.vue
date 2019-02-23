@@ -40,19 +40,25 @@ export default {
     };
   },
   methods: {
+    update(){
+      return this.getRecommend()
+    },
     getRecommend() {
       if (this.curPage > this.totalPage) {
-        return;
+        return Promise.reject(new Error('没有更多了'));
       }
       // 只有当前页小于总页数时才获取数据，否则就表示是最后一页了，不用获取
-      getHomeRecommend(this.curPage).then(data => {
-        if (data) {
+      return getHomeRecommend(this.curPage).then(data => {
+        return new Promise(resolve => {
+          if (data) {
           this.curPage++;
           this.totalPage = data.totalPage;
           this.recommends = this.recommends.concat(data.itemList);
           // concat用于连接多个数据，因为recommends是累加商品列表，而不是固定的
-          this.$emit('loaded',this.recommends)
+          this.$emit('loaded',this.recommends);
+          resolve();
         }
+        })
       });
     }
   },

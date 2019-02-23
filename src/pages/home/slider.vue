@@ -1,7 +1,7 @@
 <template>
   <div class="slider-wrapper">
     <me-loading v-if="!sliders.length"></me-loading>
-    <me-slider :direction="direction" :loop="loop" :interval="interval" :pagination="pagination" v-else>
+    <me-slider :direction="direction" :loop="loop" :interval="interval" :pagination="pagination" :data="sliders" v-else>
       <swiper-slide v-for="(item, index) in sliders" :key="index">
         <a :href="item.linkUrl" class="slider-link">
           <img :src="item.picUrl" alt class="slider-img">
@@ -50,8 +50,11 @@ export default {
     };
   },
   methods:{
+    update(){
+      return this.getSliders()
+    },
       getSliders(){
-          getHomeSlider().then(data => {
+          return getHomeSlider().then(data => {
               this.sliders = data
           })
       }
