@@ -41,7 +41,7 @@
       'me-scroll':MeScroll,
       'home-nav':HomeNav,
       'home-recommend':HomeRecommend,
-      'me-backtop':MeBacktop
+      'me-backtop':MeBacktop,
     },
     data() {
       return {

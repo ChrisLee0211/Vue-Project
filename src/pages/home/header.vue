@@ -2,7 +2,10 @@
     
         <me-navbar class="header" v-show="visible">
             <i class="iconfont icon-scan" slot="left"></i>
-            <div slot="center">搜索框</div>
+            <me-search-box
+                placeholder="减价又打折，好货有逼格"
+                slot="center"
+            />
             <i class="iconfont icon-msg" slot="right"></i>
         </me-navbar>
     
@@ -10,11 +13,13 @@
 
 <script>
 import MeNavbar from 'base/navbar'
+import MeSearch from 'base/search-box'
 
 export default {
     name:'HomeHeader',
     components: {
-        'me-navbar':MeNavbar
+        'me-navbar':MeNavbar,
+        'me-search-box':MeSearch
     },
     data() {
         return {
