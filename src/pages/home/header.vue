@@ -5,6 +5,9 @@
             <me-search-box
                 placeholder="减价又打折，好货有逼格"
                 slot="center"
+                @query = "getQuery"
+                fake
+                @click.native="goToSearch"
             />
             <i class="iconfont icon-msg" slot="right"></i>
         </me-navbar>
@@ -28,7 +31,13 @@ export default {
     },
     methods: {
         show(){this.visible = true},
-        hide(){this.visible = false}
+        hide(){this.visible = false},
+        getQuery(query){
+            console.log(query)
+        },
+        goToSearch(){
+            this.$router.push('/search')
+        }
     }
 }
 </script>

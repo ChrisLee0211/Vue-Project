@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <swiper :options="swiperOption" ref="swiper">
       <div class="mine-scroll-pull-down" v-if="pullDown">
         <me-loading :text="pullDownText" inline  ref="pullDownLoading" />
@@ -12,7 +12,7 @@
       </div>
       <div class="swiper-scrollbar" v-if="scrollbar" slot="scrollbar"></div>
     </swiper>
-  </div>
+
 </template>
 <script>
 import { swiper, swiperSlide } from "vue-awesome-swiper";
@@ -65,9 +65,11 @@ export default {
   },
   methods: {
     update() {
-      if (this.$refs.swiper) {
+      this.$nextTick(() =>{
+        if (this.$refs.swiper) {
         this.$refs.swiper.swiper.update();
       }
+      })
     },
 
     scrollToTop(speed, runCallbacks){
@@ -192,7 +194,7 @@ export default {
 .swiper-container {
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 100%;
   };
 
   .swiper-slide {

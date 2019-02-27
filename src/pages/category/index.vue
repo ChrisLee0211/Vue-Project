@@ -45,7 +45,6 @@ import CategoryContent from './content'
     width:100%;
     height:100%;
     background-color: $bgc-theme;
-    padding-bottom: 50px
   }
 
   .g-content-container {
