@@ -17,7 +17,6 @@ const transformData = data =>{
 export default (url,data,options) => {
     // 自己先做好url和data数据的拼接
     url += (url.indexOf('?') < 0 ? '?':'&') + transformData(data);
-
     return new Promise((resolve, reject) => {
         jsonp(url, options,(err,data) => {
             if(err){

@@ -51,6 +51,7 @@ export default {
       return getHomeRecommend(this.curPage).then(data => {
         return new Promise(resolve => {
           if (data) {
+            console.log(data)
           this.curPage++;
           this.totalPage = data.totalPage;
           this.recommends = this.recommends.concat(data.itemList);

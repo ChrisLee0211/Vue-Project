@@ -1,11 +1,45 @@
 <template>
-    <div class="product">
-        product
-    </div>
+  <div class="product">
+    <p-header @backToHome="updateBanner"/>
+    <p-banner :productId="itemId" ref="banner"/>
+    <p-footer/>
+  </div>
+    
 </template>
 <script>
+// import {getItem} from "api/product"
+import productHeader from './header'
+import productFooter from './footer'
+import productBanner from './banner'
+
   export default {
-    name: 'product'
+    
+    name: 'product',
+    components: {
+      'p-header':productHeader,
+      'p-footer':productFooter,
+      'p-banner':productBanner
+    },
+    data() {
+      return {
+        itemId:'',
+        itemDetail:{}
+      }
+    },
+    created(){
+      this.getItemId();
+      // this.updateBanner()
+    },
+    methods: {
+      updateBanner(){
+        this.$router.go(0)
+        this.$refs.banner.update()
+      },
+      getItemId(){
+        this.itemId = this.$route.params.id
+        parseInt(this.itemId)
+      }
+    }
   };
 </script>
 <style lang="scss" scoped>
