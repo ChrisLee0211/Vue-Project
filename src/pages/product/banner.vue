@@ -55,10 +55,8 @@ export default {
     },
     getPic() {
       this.itemId = this.productId;
-      console.log(this.itemId)
       return getProductDetail(this.itemId).then(
         data => {
-          console.log(data);
           this.sliders = data.data.item.images
         },
         err => {

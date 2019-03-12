@@ -32,7 +32,7 @@ import productBanner from './banner'
     },
     methods: {
       updateBanner(){
-        this.$router.go(0)
+        
         this.$refs.banner.update()
       },
       getItemId(){

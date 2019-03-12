@@ -28,6 +28,7 @@ import CategoryContent from './content'
     methods: {
       getCurrentId(id){
         this.curId = id
+        console.log(id)
       }
     },
     components: {
