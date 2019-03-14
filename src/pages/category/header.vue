@@ -22,7 +22,7 @@ export default {
     },
     methods: {
       getQuery(query){
-        console.log(query)
+        return
       },
       goToSearch(){
         this.$router.push('/search')

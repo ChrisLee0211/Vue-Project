@@ -27,7 +27,6 @@ export default {
     },
     goBack() {
       
-      this.$emit('backToHome')
       this.$router.push({path:'/home'})
     }
   }

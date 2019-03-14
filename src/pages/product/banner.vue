@@ -36,7 +36,7 @@ export default {
   },
   props: {
     productId: Number,
-    default: ""
+    default: 0
   },
   components: {
     "me-slider": MeSlider,
@@ -69,7 +69,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .banner {
-  height: 400px;
+  height: 350px;
 }
 .slider-img {
   width: 100%;

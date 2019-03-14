@@ -123,7 +123,6 @@ export default {
         return new Promise(resolve => {
           if(data) {
             this.content = data;
-            console.log(this.content)
             resolve();
           }
         })

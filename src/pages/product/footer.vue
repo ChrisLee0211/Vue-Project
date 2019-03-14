@@ -32,6 +32,7 @@ export default {
         background-color:white;
         display: flex;
         box-shadow:0px -2px 5px #dddddd;
+        z-index: 99;
         .footerItem{
             flex: 1;
             box-sizing: border-box;
